@@ -1,6 +1,7 @@
 export default class MovieDbService {
     apiKey = '6144809843b7a77bb86804e073c2f486';
-  //https://api.themoviedb.org/3/movie/550?api_key=6144809843b7a77bb86804e073c2f486
+  /* https://api.themoviedb.org/3/movie/550?api_key=6144809843b7a77bb86804e073c2f486 */
+  
     baseUrl = 'https://api.themoviedb.org/3/';
   
     getDataFromServer = async (url) => {
@@ -45,7 +46,7 @@ export default class MovieDbService {
         headers: { 'Content-Type': 'application/json;charset=utf-8' },
         body: JSON.stringify(body),
       }).catch((err) => {
-        // eslint-disable-next-line no-console
+        // eslint-disable-next-line
         console.error('Возникла проблема с fetch запросом: ', err.message);
       });
     };
