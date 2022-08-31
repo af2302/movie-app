@@ -54,7 +54,7 @@ const MovieCard = () => {
         <img className="card-img" alt={`poster ${filmTitle}`} src={posterURL} />
 
         <div className="card-movie-title">{filmTitle}</div>
-        <span className={inputClasses.join(' ')}>{popularity}</span>
+        <span className={inputClasses.join(' ')}>{Math.round(popularity*10)/10}</span>
 
         <Text type="secondary" className="card-release-date">
           {releaseDate}

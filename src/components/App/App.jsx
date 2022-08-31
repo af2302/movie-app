@@ -25,7 +25,7 @@ export default class App extends Component {
     notFound: false,
     searchQuery: '',
     numberPage: 1,
-    totalPages: 0,
+    totalPages: 1,
     guestSessionId: '',
     tabPane: '1',
   };
@@ -146,7 +146,7 @@ export default class App extends Component {
       .then((item) => {
         this.setState({
           // eslint-disable-next-line react/no-unused-state
-          totalPages: item.total_pages,
+          totalPages: 5000,
           numberPage,
         });
         if (item.results.length === 0) {
@@ -344,11 +344,11 @@ export default class App extends Component {
     const search = tabPane === '1' ? <Search searchQueryChange={this.searchQueryChange} /> : null;
 
     const pagination =
-      totalPages > 0 && !isLoading ? (
+      totalPages > 1 && !isLoading ? (
         <Pagination
           defaultCurrent={1}
           current={numberPage}
-          total={totalPages * 10}
+          total={totalPages}
           showSizeChanger={false}
           onChange={this.changePage}
         />
